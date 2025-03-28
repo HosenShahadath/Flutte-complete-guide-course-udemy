@@ -3,4 +3,5 @@
  - understanding & writing Flutter and Dart Code
  - Working with Flutter Widgets
 
-# Text, Container, Gradient, Custom Widget
+# Text, Container, Gradient, Custom Widget, Variables, Const and Final
+  
