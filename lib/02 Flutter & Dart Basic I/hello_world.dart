@@ -9,8 +9,8 @@ class HelloWorld extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientContainer(colors: [
-        Color.fromARGB(255, 26, 2, 80),
-        Color.fromARGB(255, 45, 7, 98),
+        const Color.fromARGB(255, 26, 2, 80),
+        const Color.fromARGB(255, 45, 7, 98),
       ]),
     );
   }
