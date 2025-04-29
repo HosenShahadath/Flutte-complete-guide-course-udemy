@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide_course_udemy/Flutter%20&%20Dart%20Basic%20II/question_screen.dart';
 
-class StartScreen extends StatelessWidget {
+class StartScreen extends StatefulWidget {
   const StartScreen({super.key});
 
+  @override
+  State<StartScreen> createState() => _StartScreenState();
+}
+
+class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +31,11 @@ class StartScreen extends StatelessWidget {
               //   opacity: 0.6,
               //   child: Image.asset('assets/images/quiz-logo.png', width: 300),
               // ),
-              Image.asset('assets/images/quiz-logo.png', width: 300, color: Colors.white30,),
+              Image.asset(
+                'assets/images/quiz-logo.png',
+                width: 300,
+                color: Colors.white30,
+              ),
               const SizedBox(height: 80),
               Text(
                 'Learn Flutter the fun way !',
@@ -33,7 +43,9 @@ class StartScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               OutlinedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  _onButtonClick();
+                },
                 style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
                 icon: Icon(Icons.arrow_forward, color: Colors.white54),
                 label: Text('Start Quiz'),
@@ -42,6 +54,13 @@ class StartScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _onButtonClick() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => QuestionScreen()),
     );
   }
 }
