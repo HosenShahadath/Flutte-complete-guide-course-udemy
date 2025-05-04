@@ -21,15 +21,11 @@ class _QuestionScreenState extends State<QuestionScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(currentQuestion.text),
+              Text(currentQuestion.text, style: TextStyle(fontSize: 18),),
               const SizedBox(height: 30,),
-              AnswerButton(answerText: currentQuestion.answer[0], onTap: (){}),
-              const SizedBox(height: 16,),
-              AnswerButton(answerText: currentQuestion.answer[1], onTap: (){}),
-              const SizedBox(height: 16,),
-              AnswerButton(answerText: currentQuestion.answer[2], onTap: (){}),
-              const SizedBox(height: 16,),
-              AnswerButton(answerText: currentQuestion.answer[3], onTap: (){}),
+              ...currentQuestion.answer.map((item){
+                return AnswerButton(answerText: item, onTap: (){});
+              })
             ],
           ),
         ),
