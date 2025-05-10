@@ -18,15 +18,19 @@ class _QuestionScreenState extends State<QuestionScreen> {
       body: Center(
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(currentQuestion.text, style: TextStyle(fontSize: 18),),
-              const SizedBox(height: 30,),
-              ...currentQuestion.answer.map((item){
-                return AnswerButton(answerText: item, onTap: (){});
-              })
-            ],
+          child: Container(
+            margin: const EdgeInsets.all(40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(currentQuestion.text, style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
+                const SizedBox(height: 30),
+                ...currentQuestion.getShuffleAnswers().map((item) {
+                  return AnswerButton(answerText: item, onTap: () {});
+                }),
+              ],
+            ),
           ),
         ),
       ),
